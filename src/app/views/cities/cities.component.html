@@ -1,0 +1,31 @@
+<nav class="navbar">
+    <div class="h2">
+        Cities 
+        <button type="button" (click)="edit(Action[Action.New], 0)" class="btn btn-primary btn-md float-right align-bottom">Create New</button>
+    </div>    
+</nav>
+
+<table class="table table-striped">
+      <thead>
+          <tr>    
+            <th>City</th>        
+            <th>State</th>
+            <th>Country</th>
+            <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let entity of entities">
+              <td>{{entity.name}}</td>
+              <td>{{entity.state.name}}</td>
+              <td>{{entity.state.country.name}}</td>
+              <td>     
+                <div class="btn-group float-right" role="group">             
+                  <button type="button" (click)="edit(Action[Action.Edit], entity.id)" class="btn btn-sm btn-link">Edit</button>|
+                  <button type="button" (click)="edit(Action[Action.Detail], entity.id)" class="btn btn-sm btn-link">Details</button>|
+                  <button type="button" (click)="edit(Action[Action.Delete], entity.id)" class="btn btn-sm btn-link">Delete</button>
+                </div>
+              </td>
+          </tr>
+      </tbody>
+  </table>

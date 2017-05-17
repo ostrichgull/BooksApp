@@ -1,3 +1,39 @@
-<h1>
-  {{title}}
-</h1>
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{{title}}</title>     
+  </head>
+
+  <body>        
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="container">      
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="navbar-brand" [routerLink]="">Books</a>
+              <a class="nav-item nav-link" routerLink="/genres">Genres</a>
+              <a class="nav-item nav-link" routerLink="/aircrafts">Authors</a>
+              <a class="nav-item nav-link" [routerLink]="">Patrons<span class="sr-only">(current)</span></a>              
+              <a class="nav-item nav-link" routerLink="/persontypes">Person Types</a>
+              <a class="nav-item nav-link" routerLink="/genders">Genders</a>              
+              <a class="nav-item nav-link" routerLink="/countries">Countries</a>          
+              <a class="nav-item nav-link" routerLink="/states">States</a>
+              <a class="nav-item nav-link" routerLink="/cities">Cities</a>
+              <a class="nav-item nav-link" routerLink="/states">Addresses</a>   
+            </div>
+          </div>
+      </div>
+    </nav>
+    
+    <div class="container body-content">
+      <router-outlet></router-outlet>
+    </div>    
+  </body>
+
+</html>

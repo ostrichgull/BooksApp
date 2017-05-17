@@ -1,0 +1,28 @@
+<form (ngSubmit)="submit()">
+  <br />
+  <div class="form-horizontal table-bordered rounded p-2">
+        <h5>{{title}}</h5>
+        <hr />    
+    <div class="form-group row">   
+      <input type="hidden" class="form-control" placeholder="id" [(ngModel)]="entity.id" name="id">
+    </div> 
+    <div class="form-group row">   
+        <label for="name" class="col-2 col-form-label">Genre</label>
+        <div class="col-5">
+          <input type="text" class="form-control" placeholder="Genre Name" [(ngModel)]="entity.name" name="name" *ngIf="action != Action[Action.Detail] && action != Action[Action.Delete]" required="true">
+          <label for="Name" *ngIf="action != Action[Action.New] && action != Action[Action.Edit]" class="col-5 col-form-label">{{entity.name}}</label>
+          <div class="pt-2">
+            <button *ngIf="action == Action[Action.New]" type="submit" class="btn btn-secondary">Create</button>   
+            <button *ngIf="action == Action[Action.Edit]" type="submit" class="btn btn-secondary">Save</button>
+            <button *ngIf="action == Action[Action.Delete]" type="submit" class="btn btn-secondary">Delete</button>     
+          </div>
+        </div>
+    </div>     
+  </div>
+
+  <div class="pt-2">
+    <button *ngIf="action == Action[Action.Detail]" type="button" (click)="editDetail()" class="btn btn-sm btn-link">Edit</button><span *ngIf="action == Action[Action.Detail]"> |</span>
+    <button type="button" (click)="backToList()" class="btn btn-sm btn-link">Back to List</button>    
+  </div>
+
+</form>
